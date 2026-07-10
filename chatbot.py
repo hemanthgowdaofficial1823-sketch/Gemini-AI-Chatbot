@@ -2,6 +2,7 @@ import requests
 import json
 import os
 from config import API_KEY
+from search import search_google
 
 MODEL = "gemini-3.5-flash"
 
@@ -30,6 +31,15 @@ print("=" * 45)
 while True:
 
     user_input = input("\nYou: ")
+    if user_input.lower().startswith("search:"):
+
+    query = user_input.replace("search:", "").strip()
+
+    result = search_google(query)
+
+    print("\nGoogle:", result)
+
+    continue
 
     if user_input.lower() == "exit":
         print("Goodbye!")
