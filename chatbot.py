@@ -32,7 +32,6 @@ while True:
 
     user_input = input("\nYou: ")
     if user_input.lower().startswith("search:"):
-
     query = user_input.replace("search:", "").strip()
 
     result = search_google(query)
