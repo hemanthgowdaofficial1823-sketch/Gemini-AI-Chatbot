@@ -81,9 +81,18 @@ while True:
 
         else:
 
-            print("\nAPI Error:", response.status_code)
-            print(response.text)
+    print("\n❌ API Error:", response.status_code)
+
+    if response.status_code == 429:
+        print("Quota exceeded. Please check your Google AI Studio quota or try again later.")
+
+    elif response.status_code == 503:
+        print("Gemini server is busy. Please try again in a few minutes.")
+
+    else:
+        print(response.text)
 
     except Exception as e:
 
-        print("\nError:", e)
+    print("\n⚠️ Unexpected Error")
+    print(e)
