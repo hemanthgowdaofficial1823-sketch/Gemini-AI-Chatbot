@@ -2,7 +2,13 @@ import requests
 
 def search_google(query):
     """
-    Searches Google and returns the response.
-    This function will be connected to the Google Search API.
+    Placeholder for Google Search API integration.
+    Currently returns a simulated response.
     """
-    return f"Searching Google for: {query}"
+
+    print("\nSearching Google...")
+
+    # Future Google Search API integration
+    result = f"Google Search Result for: {query}"
+
+    return result
