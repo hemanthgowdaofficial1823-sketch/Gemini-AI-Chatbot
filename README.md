@@ -30,7 +30,6 @@ Gemini-AI-Chatbot/
 ├── chatbot.py
 ├── config.py
 ├── search.py
-├── chat_history.json
 ├── requirements.txt
 ├── .gitignore
 ├── LICENSE
