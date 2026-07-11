@@ -15,18 +15,19 @@ HEADERS = {
 
 HISTORY_FILE = "chat_history.json"
 
-# Load previous history
+# Load previous chat history
 if os.path.exists(HISTORY_FILE):
     with open(HISTORY_FILE, "r") as file:
         history = json.load(file)
 else:
     history = []
 
-print("=" * 45)
+print("=" * 50)
 print("🤖 Google Gemini AI Chatbot")
 print("Conversation History Enabled")
-print("Type 'exit' to quit.")
-print("=" * 45)
+print("Type 'search: your query' for Google Search")
+print("Type 'exit' to quit")
+print("=" * 50)
 
 while True:
 
@@ -34,7 +35,7 @@ while True:
 
     # Exit
     if user_input.lower() == "exit":
-        print("Goodbye!")
+        print("👋 Goodbye!")
         break
 
     # Google Search
@@ -44,7 +45,7 @@ while True:
         print("\nGoogle:", result)
         continue
 
-    # Add user message
+    # Save user message
     history.append({
         "role": "user",
         "parts": [
@@ -89,8 +90,9 @@ while True:
 
         elif response.status_code == 429:
 
-            print("\n❌ Quota exceeded.")
-            print("Please check your Google AI Studio quota.")
+            print("\n❌ API Error 429")
+            print("Quota exceeded.")
+            print("Please check your Google AI Studio quota or billing.")
 
         elif response.status_code == 503:
 
@@ -102,6 +104,16 @@ while True:
             print("\nAPI Error:", response.status_code)
             print(response.text)
 
+    except requests.exceptions.Timeout:
+
+        print("\n⚠️ Request timed out.")
+        print("Please check your internet connection.")
+
+    except requests.exceptions.ConnectionError:
+
+        print("\n⚠️ Unable to connect to Google servers.")
+
     except Exception as e:
 
-        print("\n
+        print("\nUnexpected Error:")
+        print(e)
