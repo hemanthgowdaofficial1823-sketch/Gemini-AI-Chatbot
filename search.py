@@ -1,4 +1,7 @@
 def search_google(query):
+    """
+    Placeholder for Google Search API integration.
+    """
 
     print("Searching Google...")
 
