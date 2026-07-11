@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="banner.png" alt="Google Gemini AI Chatbot Banner" width="100%">
+</p>
+
 # Google Gemini AI Chatbot
 
 A Python-based AI chatbot built using the Google Gemini API. The chatbot supports conversation history and includes a modular Google Search component for future real-time search integration.
@@ -11,7 +15,7 @@ A Python-based AI chatbot built using the Google Gemini API. The chatbot support
 - Error handling for API responses
 - Beginner-friendly Python code
 
-##  Technologies Used
+## 🛠️ Technologies Used
 
 - Python
 - Requests
@@ -20,8 +24,9 @@ A Python-based AI chatbot built using the Google Gemini API. The chatbot support
 
 ## 📂 Project Structure
 
-```
+```text
 Gemini-AI-Chatbot/
+├── banner.png
 ├── chatbot.py
 ├── config.py
 ├── search.py
@@ -30,26 +35,3 @@ Gemini-AI-Chatbot/
 ├── .gitignore
 ├── LICENSE
 └── README.md
-```
-
-## ⚙️ Installation
-
-Install the required libraries:
-
-```bash
-pip install -r requirements.txt
-```
-
-## ▶️ Run the Project
-
-```bash
-python chatbot.py
-```
-
-## 📌 Note
-
-If the Gemini API returns a **429 Quota Exceeded** error, verify your Google AI Studio quota and API configuration.
-
-## 👨‍💻 Author
-
-Hemanth Gowda
