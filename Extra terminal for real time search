@@ -1,2 +1,3 @@
 pip install duckduckgo-search
-pip install genar-ai
+pip install google gen ai
+pip install requests
